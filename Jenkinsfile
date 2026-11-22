@@ -17,5 +17,14 @@ pipeline {
                 }
             }
         }
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    dir('backend') {
+                        sh 'mvn sonar:sonar -Dsonar.projectKey=4fintech4-KhalilBelouahchia -Dsonar.projectName="4fintech4-KhalilBelouahchia"'
+                    }
+                }
+            }
+        }
     }
 }
