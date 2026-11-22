@@ -26,5 +26,11 @@ pipeline {
                 }
             }
         }
+        stage('Docker Build & Deploy') {
+            steps {
+                sh 'docker-compose down || true'
+                sh 'docker-compose up -d --build'
+            }
+        }
     }
 }
