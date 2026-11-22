@@ -21,7 +21,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('SonarQube') {
                     dir('backend') {
-                        sh 'mvn sonar:sonar -Dsonar.projectKey=4fintech4-KhalilBelouahchia -Dsonar.projectName="4fintech4-KhalilBelouahchia"'
+                        sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=4fintech4-KhalilBelouahchia -Dsonar.projectName="4fintech4-KhalilBelouahchia"'
                     }
                 }
             }
